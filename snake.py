@@ -36,6 +36,7 @@ def random_food_color():
 food_color = random_food_color()
 
 def move_food():
+    """Makes food move every 200ms, checks that new position isn't out of range"""
     directions = [vector(10, 0), vector(-10, 0), vector(0, 10), vector(0, -10)]
     step = choice(directions)
     new_x = food.x + step.x

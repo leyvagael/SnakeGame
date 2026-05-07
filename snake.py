@@ -2,9 +2,13 @@
 
 Exercises
 
+(done)
 1. How do you make the snake faster or slower?
+
 2. How can you make the snake go around the edges?
+
 3. How would you move the food?
+(done)
 4. Change the snake to respond to mouse clicks.
 """
 
@@ -41,6 +45,23 @@ def inside(head):
     """Return True if head inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
 
+def mouse(x, y):
+    """Control snake with mouse clicks."""
+    head = snake[-1]
+
+    if abs(x - head.x) > abs(y - head.y):
+
+        if x > head.x:
+            change(10, 0)
+        else:
+            change(-10, 0)
+
+    else:
+
+        if y > head.y:
+            change(0, 10)
+        else:
+            change(0, -10)
 
 def move():
     """Move snake forward one segment."""
@@ -77,6 +98,7 @@ setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
 listen()
+onscreenclick(mouse)
 onkey(lambda: change(10, 0), 'Right')
 onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')

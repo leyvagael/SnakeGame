@@ -83,11 +83,21 @@ def move():
     head.move(aim)
 
 
-    if not inside(head) or head in snake:
+    if head in snake:
         square(head.x, head.y, 9, 'red')
         update()
         return
-
+       
+    # Wrap around edges
+    if head.x >= 190:
+        head.x = -190
+    elif head.x <= -200:
+        head.x = 180
+    if head.y >= 190:
+        head.y = -190
+    elif head.y <= -200:
+        head.y = 180
+ 
     snake.append(head)
 
     if head == food:

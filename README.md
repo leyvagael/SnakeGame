@@ -11,10 +11,19 @@ The player controls a snake that moves around a bounded screen eating food. Each
 - Python 3.x
 - [`freegames`](https://pypi.org/project/freegames/) library
 
+Use a virtual environment to create an isolated workspace for a project’s dependencies and Python version.
+This prevents package conflicts between projects and keeps your system installation clean.
+
+```bash
+sudo apt -get install python3-all-venv
+python3 -m venv ./games/
+source ./games/bin/activate
+```
+
 Install the dependency with:
 
 ```bash
-pip install freegames
+python3 -m pip install freegames
 ```
 
 ## How to Run

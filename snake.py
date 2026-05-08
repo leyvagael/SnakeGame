@@ -4,9 +4,9 @@ Exercises
 
 (done)
 1. How do you make the snake faster or slower?
-
+(done)
 2. How can you make the snake go around the edges?
-
+(done)
 3. How would you move the food?
 (done)
 4. Change the snake to respond to mouse clicks.
@@ -52,11 +52,6 @@ def change(x, y):
     """Change snake direction."""
     aim.x = x
     aim.y = y
-
-
-def inside(obj):
-    """Return True if object inside boundaries."""
-    return -200 < obj.x < 190 and -200 < obj.y < 190
 
 def mouse(x, y):
     """Control snake with mouse clicks."""
